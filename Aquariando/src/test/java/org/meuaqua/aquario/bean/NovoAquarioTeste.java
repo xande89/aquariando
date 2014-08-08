@@ -23,20 +23,14 @@ public class NovoAquarioTeste {
 	
 	@Test
 	public void testaInsercao(){
-		
-//		Persistence.createEntityManagerFactory("AQUARIO");
-//		Persistence.createEntityManagerFactory("EQUIPAMENTO");
-//		Persistence.createEntityManagerFactory("FAUNA");
-//		Persistence.createEntityManagerFactory("FILTRAGEM");
-//		Persistence.createEntityManagerFactory("FLORA");
-//		Persistence.createEntityManagerFactory("ILUMINACAO");
-//		Persistence.createEntityManagerFactory("PARAMETRO");
-//		Persistence.createEntityManagerFactory("SUPRIMENTO");
+
 		
 		AquarioVO aquario = aquarioService.getAquario();
 		aquario.setAltura(Float.parseFloat("20"));
 		aquario.setComprimento(Float.parseFloat("20"));
 		aquario.setLargura(Float.parseFloat("20"));
+		
+		
 		
 		aquarioService.criaAquario();
 		List<AquarioVO> listaAquarios = aquarioService.listar();
@@ -45,5 +39,6 @@ public class NovoAquarioTeste {
 		
 		
 	}
+	
 
 }

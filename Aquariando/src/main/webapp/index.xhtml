@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hello JSF!</title>
+</h:head>
+<h:body> 
+	<p:layout style="max-width:400px;min-height:200px; margin-left:auto;margin-right:auto;">
+		<p:layoutUnit position="west" resizable="true" size="100" minSize="40" maxSize="200">
+		      West
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="center">
+			<h:form>
+				<p:outputLabel for="email" value="Email: " />
+				<p:inputText id="email" value="#{loginController.email}"/>
+				<p:outputLabel for="senha" value="Senha: " />
+				<p:password id="senha" value="#{loginController.senha}"/>
+				<h:commandButton action="#{loginController.fazLogin}" value="OK"/>
+				<h:commandLink value="Esqueci a senha" action="#{loginController.lembra}"></h:commandLink>
+			</h:form>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

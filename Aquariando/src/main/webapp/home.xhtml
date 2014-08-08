@@ -1,30 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/WEB-INF/templates/template.xhtml">
-	<ui:define name="content">
-		<h1><h:outputText value="Hello From JSF" /></h1>
-		Message : #{homeBean.message}<br />
-		<br />
-		<h2>Tasks</h2>
-		<table>
-			<ui:repeat value="#{taskHome.tasks}" var="v_task">
-				<tr>
-					<td>#{v_task.id}</td>
-					<td>#{v_task.description}</td>
-				</tr>
-			</ui:repeat>
-		</table>
-
-		<h:form>
-			<div
-				style="border-top: 1px solid #d0d0d0; margin-top: 12px; padding-top: 12px">
-				<h:inputText value="#{taskHome.task.description}" id="taskDesc"/><h:commandButton
-				action="#{taskHome.saveTask}" value="Add" /><h:message for="taskDesc" style="color : red;padding-left : 8px"/></div>
-
-		</h:form>
-
-	</ui:define>
-</ui:composition>
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hello JSF!</title>
+	<style>
+	.header-login
+	{
+		min-height: 40px;
+	}
+	</style>
+</h:head>
+<h:body> 
+	<p:layout style="max-width:90%; margin-left:auto;margin-right:auto;">
+		<p:layoutUnit position="north" styleClass="header-login"  resizable="true">
+		      
+		</p:layoutUnit>
+		<p:layoutUnit position="west" resizable="false" size="50%">
+		      <h:graphicImage value="imagens/logo_gr.jpg" ></h:graphicImage>
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="center" >
+			<h:form>
+				<p:outputLabel for="email" value="Email: " /><br/>
+				<p:inputText id="email" value="#{loginController.usuario.email}"/><br/>
+				<p:outputLabel for="senha" value="Senha: " /><br/>
+				<p:password id="senha" value="#{loginController.usuario.senha}"/><br/>
+				<h:commandButton action="#{loginController.fazLogin}" value="OK"/>
+				<h:commandLink value="Esqueci a senha" action="#{loginController.lembra}"></h:commandLink>
+			</h:form>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

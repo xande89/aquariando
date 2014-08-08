@@ -23,10 +23,21 @@ public class UsuarioVO implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column(length=48)
+	@Column(name="NOME",length=48)
 	@NotEmpty
 	@Size(max=48)
 	private String nome;
+	
+	@Column(name="EMAIL",length=48)
+	@NotEmpty
+	@Size(max=48)
+	private String email;
+	
+	@Column(name="SENHA",length=48)
+	@NotEmpty
+	@Size(max=48)
+	private String senha;
+	
 	
 	
 	public Integer getId() {
@@ -40,6 +51,18 @@ public class UsuarioVO implements Serializable {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	

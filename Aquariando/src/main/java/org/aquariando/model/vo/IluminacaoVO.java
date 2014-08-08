@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="ILUMINACAO")
-public class IluminacaoVO implements Serializable {
+public class IluminacaoVO extends AbstractVO implements Serializable {
 
 	/**
 	 * 

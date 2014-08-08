@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Entity(name="Aquario")
 @Table(name="AQUARIO")
 @SequenceGenerator(name = "AQUARIO_SEQUENCE", sequenceName = "AQUARIO_SEQUENCE", allocationSize = 1, initialValue = 0)
-public class AquarioVO implements Serializable {
+public class AquarioVO extends AbstractVO implements Serializable {
 
 	/**
 	 * 

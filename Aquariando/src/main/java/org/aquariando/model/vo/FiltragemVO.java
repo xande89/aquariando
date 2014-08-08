@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="FILTRAGEM")
-public class FiltragemVO implements Serializable {
+public class FiltragemVO extends AbstractVO implements Serializable {
 
 	/**
 	 * 

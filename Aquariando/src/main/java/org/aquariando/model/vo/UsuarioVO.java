@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class UsuarioVO implements Serializable {
+public class UsuarioVO extends AbstractVO implements Serializable {
 
 	/**
 	 * 

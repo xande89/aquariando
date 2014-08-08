@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PARAMETRO")
-public class ParametroVO implements Serializable {
+public class ParametroVO extends AbstractVO implements Serializable {
 
 	/**
 	 * 
